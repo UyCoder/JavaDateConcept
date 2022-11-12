@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -56,4 +57,45 @@ public class DateTimeTest {
         System.out.println(date);
 
     }
+
+    /**
+     * calendar
+     */
+    @Test
+    public void testCalendar(){
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getClass());
+        System.out.println(calendar.getInstance());
+
+        // get()
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
+
+        // set()
+        calendar.set(Calendar.DAY_OF_MONTH, 2);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+        // add()
+        calendar.add(Calendar.DAY_OF_MONTH,-1);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+        // getTime()
+        Date time = calendar.getTime();
+        System.out.println(time);
+
+        // setTime()
+        Date date1 = new Date();
+        calendar.setTime(date1);
+        int days = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println(days);
+
+    }
+
+    /** other Date APIs:
+     *          ZoneId
+     *          ZodedDateTime
+     *          Clock
+     *          TemporalAdjuster
+     *          TemporalAdjusters
+     */
 }
