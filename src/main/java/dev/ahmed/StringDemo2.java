@@ -38,6 +38,5 @@ public class StringDemo2 {
         String str1= "asdfbfefdndfhellouiodef", str2= "cvhellobnm";
         String maxSameString = getMaxSameString(str1,str2);
         System.out.println(maxSameString);
-
     }
 }
